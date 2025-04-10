@@ -35,13 +35,15 @@ pipeline {
       }
     }
     stage('Delivery') {
-      withCredentials([sshUserPrivateKey(credentialsId: 'jenkins-yandex-agent-1-key', keyFileVariable: 'private_key', usernameVariable: 'username')]) {
-        script {
-          remote.name = "${env.HOST}"
-          remote.host = "${env.HOST}"
-          remote.user = "$username"
-          remote.identity = readFile("$private_key")
-          remote.allowAnyHosts = true
+      steps {
+        withCredentials([sshUserPrivateKey(credentialsId: 'jenkins-yandex-agent-1-key', keyFileVariable: 'private_key', usernameVariable: 'username')]) {
+          script {
+            remote.name = "${env.HOST}"
+            remote.host = "${env.HOST}"
+            remote.user = "$username"
+            remote.identity = readFile("$private_key")
+            remote.allowAnyHosts = true
+          }
         }
       }
       sshCommand remote: remote, command: """
