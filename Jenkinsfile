@@ -52,7 +52,7 @@ pipeline {
         """
         sh """
           set -ex
-          rsync -av --delete -e "ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null" -i '$private_key' .output/public "jenkins@${env.HOST}:${env.PRJ_DIR}/"
+          rsync -av --delete -e "ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null" -i "$private_key" .output/public "jenkins@${env.HOST}:${env.PRJ_DIR}/"
         """
       }
     }
