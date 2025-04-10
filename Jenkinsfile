@@ -43,6 +43,7 @@ pipeline {
             remote.user = "$username"
             remote.identity = readFile("$private_key")
             remote.allowAnyHosts = true
+            remote.agentForwarding = true
           }
         }
       
