@@ -21,8 +21,8 @@ pipeline {
 			// Переопределяем агента вместо глобального
 			agent {
 				docker {
-					image 'node'
-					label 'docker'
+          label: 'docker'
+					image: 'node'					
 					reuseNode: true
 				}
 			}
