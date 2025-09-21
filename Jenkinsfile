@@ -17,13 +17,12 @@ pipeline {
 				git branch: "${env.BRANCH}", url: "${GIT_URL}"
 			}			 
 		}
-		stage('Build static') {
-			// Переопределяем агента вместо глобального
+		stage('Build static') {	
 			agent {
 				docker {
-          label: 'docker'
-					image: 'node'					
-					reuseNode: true
+          label 'docker'
+					image 'node'					
+					reuseNode true
 				}
 			}
 			steps {
