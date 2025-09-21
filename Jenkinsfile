@@ -8,7 +8,7 @@ pipeline {
 	environment {
 		PRJ_DIR = "/var/www/nuxt"
 		// jenkins-stage
-		HOST = "46.173.185.87"
+		HOST = "89.169.184.123"
 		BRANCH = "main"
 	}
 	stages {
