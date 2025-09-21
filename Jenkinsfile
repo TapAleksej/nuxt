@@ -1,4 +1,4 @@
-def GIT_URL = "https://github.com/TapAleksej/nuxt.git"
+def GIT_URL = "git@github.com:TapAleksej/nuxt.git"
 
 pipeline {
 	// глобальный агент
