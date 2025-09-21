@@ -36,7 +36,7 @@ pipeline {
 				script {
 					sh """
 						set -ex;
-						rsync -av --delete -e "ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null" .output/public "${username}@${env.HOST}:${env.PRJ_DIR}/"
+						rsync -av --delete -e "ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null" .output/public "jenkins@${env.HOST}:${env.PRJ_DIR}/"
 						"""
 					sh "tar -czvf frontend.tar.gz .output/public"
 					archiveArtifacts artifacts: 'frontend.tar.gz', fingerprint: true, onlyIfSuccessful: true	
