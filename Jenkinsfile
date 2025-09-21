@@ -22,7 +22,7 @@ pipeline {
 				docker {
           label 'docker'
 					image 'node'					
-					reuseNode: true
+					reuseNode true
 				}
 			}
 			steps {
